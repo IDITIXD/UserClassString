@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
 #include <cctype>
 class STROKA
@@ -30,7 +30,7 @@ void COP(STROKA& ob)//дружественная функция
 {
 	int n = 0;
 	for (int i = 0; i < strlen(ob.str); i++) {
-		if (ob.str[i] > '9') {
+		if (ob.str[i] > '9' || ob.str[i] < '0') {
 			ob.str[n] = ob.str[i];
 			n++;
 		};
@@ -40,6 +40,7 @@ void COP(STROKA& ob)//дружественная функция
 
 int main()
 {
+	setlocale(LC_ALL, NULL);
 	STROKA STROK;
 	cout << "direct" << "\n" << "\n";
 	COP(STROK);
@@ -49,3 +50,4 @@ int main()
 	p_STROK = &STROK;
 	p_STROK->show();
 }
+
